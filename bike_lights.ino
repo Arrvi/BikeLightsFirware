@@ -7,19 +7,18 @@
 #define IN_RIGHT 8
 #define DEBUG LED_BUILTIN
 
-#define LEVEL_HIGH 100
-#define LEVEL_MED 40
-#define LEVEL_LOW 10
+#define LEVEL_HIGH 255
+#define LEVEL_MED 80
+#define LEVEL_LOW 20
 #define LEVEL_OFF 0
 #define ACTIVE LOW
 #define INACTIVE HIGH
 
-#define TURN_STATE_MS 600
+#define TURN_STATE_MS 500
 #define TURN_FLASH_MS 50
-#define TURN_ON_MS (TURN_STATE_MS-TURN_FLASH_MS)
 #define TURN_CYCLE_MS (TURN_STATE_MS*2)
 
-#define LONG_PRESS_MS 2000
+#define LONG_PRESS_MS 1000
 
 
 unsigned long turnFlashStart = 0;
@@ -30,7 +29,7 @@ boolean leftBlink = false;
 boolean rightBlink = false;
 boolean changingIntensity = false;
 
-byte intensity = LEVEL_HIGH;
+byte intensity = LEVEL_MED;
 
 void setup() {
   pinMode(OUT_LEFT, OUTPUT);
